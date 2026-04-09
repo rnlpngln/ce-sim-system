@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header><h1>Advanced Engineering Simulator</h1></header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="fundamentals.html">Fundamentals</a>
+<a href="materials.html">Materials</a>
+<a href="structure.html">Structure</a>
+<a href="hazards.html">Hazards</a>
+<a href="cases.html">Cases</a>
+<a href="about.html">About</a>
+</nav>
+
+<section>
+
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80" class="hero">
+
+<h2>Simulation Control Panel</h2>
+
+<label>Material:</label>
+<select id="material">
+<option value="steel">Steel</option>
+<option value="concrete">Concrete</option>
+<option value="wood">Wood</option>
+</select>
+
+<br><br>
+
+<label>Structure:</label>
+<select id="structure">
+<option value="beam">Beam</option>
+<option value="truss">Truss</option>
+<option value="frame">Frame</option>
+</select>
+
+<br><br>
+
+<label>Hazard:</label>
+<select id="hazard">
+<option value="earthquake">Earthquake</option>
+<option value="flood">Flood</option>
+<option value="fire">Fire</option>
+<option value="typhoon">Typhoon</option>
+<option value="landslide">Landslide</option>
+<option value="wind">Wind</option>
+</select>
+
+<br><br>
+
+<label>Height: <span id="hVal" class="value">50</span></label>
+<input type="range" id="height" min="1" max="100" value="50" oninput="updateValues()">
+
+<label>Load: <span id="lVal" class="value">50</span></label>
+<input type="range" id="load" min="1" max="100" value="50" oninput="updateValues()">
+
+<label>Safety Factor: <span id="sVal" class="value">2</span></label>
+<input type="range" id="safety" min="1" max="5" value="2" oninput="updateValues()">
+
+<br><br>
+
+<button onclick="runSim()">Run Simulation</button>
+
+<div id="result"></div>
+<div id="recommendation"></div>
+
+<canvas id="chart"></canvas>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
